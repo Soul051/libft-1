@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 22:15:09 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/15 22:53:28 by galorenz         ###   ########.fr       */
+/*   Created: 2025/12/14 20:17:08 by galorenz          #+#    #+#             */
+/*   Updated: 2025/12/15 23:21:25 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char	temp;
-
-	temp = c;
-	if (temp >= 'a' && temp <= 'z')
-	{
-		temp -= 32;
-	}
-	return (temp);
+	write(fd, &c, 1);
 }
-// int main()
-// {
-// 	char c;
-// 	c = 'a';
-// 	printf("%c", ft_toupper(c));
-// }

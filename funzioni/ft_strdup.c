@@ -6,34 +6,30 @@
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 19:14:50 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/09 18:10:11 by galorenz         ###   ########.fr       */
+/*   Updated: 2025/12/15 23:13:49 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	size_t	cont;
-	size_t lunghezza;
-	char *destinazione;
-	
+	size_t	lunghezza;
+	char	*destinazione;
+
 	cont = 0;
 	lunghezza = ft_strlen(s);
-	
 	if (!s)
-		return(NULL);
-	destinazione = (char*)malloc(lunghezza + 1);
-
+		return (NULL);
+	destinazione = (char *)malloc(lunghezza + 1 * sizeof(char *));
 	while (s[cont] != '\0')
 	{
 		destinazione[cont] = s[cont];
 		cont++;
 	}
-
 	destinazione[cont] = '\0';
-	
-	return(destinazione);
+	return (destinazione);
 }
 
 /*int main()

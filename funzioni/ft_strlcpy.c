@@ -12,23 +12,20 @@
 
 #include "libft.h"
 
-size_t ft_strlcpy (char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t i;
-    size_t lunghezza_src; 
+	size_t	i;
+	size_t	lunghezza_src;
 
-    lunghezza_src = 0;
-    i = 0;
-    while(src[lunghezza_src] != '\0')
-        lunghezza_src++;
-    
-    while (i < size -1 && src[i] != '\0')
-    {
-        dst[i] = src[i];
-        i++;
-    }
-
-    dst[i] = '\0'; //la stringa deve sempre terminare con lui altrimenti non termina
-    return(lunghezza_src);
-
+	lunghezza_src = 0;
+	i = 0;
+	while (src[lunghezza_src] != '\0')
+		lunghezza_src++;
+	while (i < size -1 && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (lunghezza_src);
 }

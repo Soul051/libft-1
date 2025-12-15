@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 22:15:09 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/15 22:53:28 by galorenz         ###   ########.fr       */
+/*   Created: 2025/12/14 20:19:56 by galorenz          #+#    #+#             */
+/*   Updated: 2025/12/15 23:20:54 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	temp;
-
-	temp = c;
-	if (temp >= 'a' && temp <= 'z')
+	char	res;
+	
+	if (n == "-2147483648")
 	{
-		temp -= 32;
+		write(fd, "-2147483648", 11);
 	}
-	return (temp);
+	if (n < 0)
+	{
+		//write(fd, "-", 1);
+		ft_putnbr_fd('-', fd);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	res = (n % 10) + '0';
+	write(fd, &res, 1);
+	//ft_putchar_fd(res, fd);
 }
-// int main()
-// {
-// 	char c;
-// 	c = 'a';
-// 	printf("%c", ft_toupper(c));
-// }

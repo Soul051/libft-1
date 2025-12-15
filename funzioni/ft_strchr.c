@@ -12,24 +12,20 @@
 
 #include "libft.h"
 
- char *ft_strchr(const char *s, int c)
- {
-    unsigned char carattere;
-    const char *posiz;
+char	*ft_strchr(const char *s, int c)
+{
+	unsigned char	carattere;
+	const char		*posiz;
 
-    carattere = (unsigned char)c; //conversione
-    posiz = s;
-
-    while(*posiz != '\0') 
-    {
-            if ((unsigned char)*posiz == carattere) // carattere trovato = return punt
-                return((char *)posiz);
-            posiz++;
-    }
-
-    if (carattere == '\0')
-        return ((char *)posiz);
-
-    return(NULL);
- }
- 
+	carattere = (unsigned char)c;
+	posiz = s;
+	while (*posiz != '\0')
+	{
+		if ((unsigned char)*posiz == carattere)
+				return ((char *) posiz);
+		posiz++;
+	}
+	if (carattere == '\0')
+		return ((char *)posiz);
+	return (NULL);
+}
