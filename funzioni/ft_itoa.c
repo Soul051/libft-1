@@ -6,23 +6,21 @@
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 19:33:04 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/15 23:22:45 by galorenz         ###   ########.fr       */
+/*   Updated: 2025/12/16 20:13:36 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 static int	lung_num(int n)
 {
-	int	lung;
-	long num;
+	int		lung;
+	long	num;
 
 	lung = 0;
 	num = n;
-	if (num < 0) // conta i segni -
-	{	lung++;
+	if (num < 0)
 		num = -num;
-	}
 	if (num == 0)
 		lung = 1;
 	while (num > 0)
@@ -30,39 +28,39 @@ static int	lung_num(int n)
 		num /= 10;
 		lung++;
 	}
-	return(lung);
+	return (lung);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	long lung;
-	char    *str;
-	long    num;
+	long	lung;
+	char	*str;
+	long	num;
 
 	num = (long)n;
 	lung = lung_num(num);
-	if (!(str = (char *)malloc(lung + 1)))
-		return(NULL);
-	str[lung] = '\0';
-	lung--;
-	if ( num == 0)
+	str = (char *)malloc(lung + 1);
+	if (!str)
+		return (NULL);
+	str[lung--] = '\0';
+	if (num == 0)
 	{
-		str[0] = '0'; // cont == 0
+		str[0] = '0';
 	}
 	if (num < 0)
 	{
-		str[0] = '-'; // cont < 0
+		str[0] = '-';
 		num = -num;
 	}
 	while (num > 0)
 	{
-		str[lung--] = (num % 10) + '0'; // cont > 0
+		str[lung--] = (num % 10) + '0';
 		num /= 10;
 	}
-	return(str);
-}	
+	return (str);
+}
 
-int main(void)
+/*int main(void)
 {
 	int     numeri[] = {0, -1, 1, 42, -42, 100, -100, INT_MAX, INT_MIN};
 	char    *res;
@@ -88,4 +86,4 @@ int main(void)
 		i++;
 	}
 	return (0);
-}
+}*/

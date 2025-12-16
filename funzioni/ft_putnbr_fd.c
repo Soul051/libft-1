@@ -6,7 +6,7 @@
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 20:19:56 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/15 23:20:54 by galorenz         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:33:28 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	res;
-	
+
 	if (n == "-2147483648")
 	{
 		write(fd, "-2147483648", 11);
 	}
 	if (n < 0)
 	{
-		//write(fd, "-", 1);
 		ft_putnbr_fd('-', fd);
 		n = -n;
 	}
@@ -32,5 +31,4 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	res = (n % 10) + '0';
 	write(fd, &res, 1);
-	//ft_putchar_fd(res, fd);
 }

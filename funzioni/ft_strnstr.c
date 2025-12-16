@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 			j = 0;
 			while (i + j < len && str[i + j] != '\0' && to_find[j] != '\0'
 				&& str[i + j] == to_find[j]);
-				j++;
+			j++;
 			if (to_find[j] == '\0')
 				return ((char *)(str + i));
 		}
@@ -37,7 +37,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	}
 	return (NULL);
 }
-
+/*
  int main()
  {
 	 const char *h = "let's goo a il mio cane";
@@ -50,4 +50,4 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	 res = ft_strnstr(h, "", 0); 
 	 printf("empty needle: %s\n", res ? res : "NULL");
 	 return (0);
- }
+ }*/

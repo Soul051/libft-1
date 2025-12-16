@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	while (*posiz != '\0')
 	{
 		if ((unsigned char)*posiz == carattere)
-				return ((char *) posiz);
+			return ((char *) posiz);
 		posiz++;
 	}
 	if (carattere == '\0')

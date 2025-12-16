@@ -6,7 +6,7 @@
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:40:02 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/15 23:22:53 by galorenz         ###   ########.fr       */
+/*   Updated: 2025/12/16 20:14:12 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	ft_isdigit(int a)
 	return (1);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%d\n", ft_isdigit(48));
 	printf("%d\n", ft_isdigit(55));
 	printf("%d\n", ft_isdigit(75));
-}
+}*/

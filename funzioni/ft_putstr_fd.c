@@ -6,7 +6,7 @@
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 20:21:10 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/15 23:20:15 by galorenz         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:33:14 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	ft_putstr_fd(char *s, int fd)
 
 	lung = ft_strlen(s);
 	if (!s)
-		return;
+		return ;
 	write(fd, s, ft_strlen(s));
 }
