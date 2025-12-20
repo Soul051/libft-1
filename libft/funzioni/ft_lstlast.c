@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 22:15:09 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/15 22:53:28 by galorenz         ###   ########.fr       */
+/*   Created: 2025/12/20 22:10:31 by galorenz          #+#    #+#             */
+/*   Updated: 2025/12/20 22:50:35 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned char	temp;
+	t_list	*temp;
 
-	temp = c;
-	if (temp >= 'a' && temp <= 'z')
+	if (!lst)
+		return (NULL);
+	temp = lst;
+	while (temp->next != NULL)
 	{
-		temp -= 32;
+		temp = temp->next;
 	}
 	return (temp);
 }
-// int main()
-// {
-// 	char c;
-// 	c = 'a';
-// 	printf("%c", ft_toupper(c));
-// }

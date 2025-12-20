@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: galorenz <galorenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 22:15:09 by galorenz          #+#    #+#             */
-/*   Updated: 2025/12/15 22:53:28 by galorenz         ###   ########.fr       */
+/*   Created: 2025/12/06 21:16:28 by galorenz          #+#    #+#             */
+/*   Updated: 2025/12/20 23:19:46 by galorenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	*ft_calloc(size_t num, size_t size)
 {
-	unsigned char	temp;
+	size_t	totale;
+	void	*puntatore;
 
-	temp = c;
-	if (temp >= 'a' && temp <= 'z')
-	{
-		temp -= 32;
-	}
-	return (temp);
+	totale = num * size;
+	puntatore = malloc(totale);
+	if (puntatore == NULL)
+		return (NULL);
+	ft_memset(puntatore, 0, totale);
+	return (puntatore);
 }
-// int main()
-// {
-// 	char c;
-// 	c = 'a';
-// 	printf("%c", ft_toupper(c));
-// }
+
+int	main()
+{
+	size_t n = 7;
+	int *arr;
+	arr = (int*)ft_calloc(n, sizeof(int));
+	for(size_t i = 0; i < n; i++)
+	{
+		printf("%d", arr[i]);
+	}
+}

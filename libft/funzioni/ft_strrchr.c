@@ -12,22 +12,20 @@
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    const char *result;
-    char carattere;
+	const char	*result;
+	char		carattere;
 
-    result = ( char *)s; //convert
-    carattere = (char)c;
-
-    while (*result != '\0') //fine stringa
-        result++;
-    
-    while (result >= s) //cerca al contrario tornando indietro
-    {
-        if (*result == carattere)
-            return((char *)result);
-        result--;
-    }
-    return(NULL);
+	result = (char *)s;
+	carattere = (char)c;
+	while (*result != '\0')
+		result++;
+	while (result >= s)
+	{
+		if (*result == carattere)
+			return ((char *)result);
+		result--;
+	}
+	return (NULL);
 }
